@@ -1,26 +1,24 @@
+import Image from "next/image";
 import Link from "next/link";
-import ThemeToggleButton from "../ThemeToggleButton";
 
 const Header = () => {
   return (
-    <header
-      className="fixed right-0 left-0 border-b shadow"
-      aria-label="app-header">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-        <Link href={"/"}>
-          <h1
-            className="text-2xl font-semibold"
-            aria-label="App Name">
-            NSP App
-          </h1>
-        </Link>
+    <header className="absolute top-0 right-0 left-0 flex items-center justify-between px-35 py-8">
+      <Link href="/">
+        <Image
+          src={"/logo.png"}
+          alt={"logo"}
+          width={200}
+          height={20}
+          className="h-auto w-auto"
+        />
+      </Link>
 
-        <nav className="flex items-center gap-4">
-          <Link href={"/"}>Home</Link>
-
-          <ThemeToggleButton />
-        </nav>
-      </div>
+      <nav className="flex gap-8 text-lg tracking-widest uppercase">
+        <Link href="/">Home</Link>
+        <Link href={"/about"}>About</Link>
+        <Link href={"/contact"}>Contact</Link>
+      </nav>
     </header>
   );
 };
